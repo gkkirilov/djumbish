@@ -247,8 +247,9 @@ function submit(e) {
                                                     launch the feature.</p>
                                                 <div class="sm:col-span-4 mt-12">
                                                     <label for="email"
-                                                        class="block text-sm font-medium leading-6 text-gray-900">Email
-                                                        address</label>
+                                                        class="block text-sm font-medium leading-6 text-gray-900">
+                                                        Email address
+                                                    </label>
                                                     <div class="mt-2">
                                                         <input v-model="email" id="email" name="email" type="email"
                                                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
