@@ -20,6 +20,6 @@ export default defineEventHandler(async (event) => {
     return {};
   } catch (error) {
     console.log(error)
-    return { error: true, errorMessage: error };
+    return { error: true, errorMessage: JSON.stringify(error) };
   }
 });
