@@ -17,37 +17,16 @@
                             <DialogPanel
                                 class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md sm:p-6">
                                 <div>
-                                    <div class="text-indigo-600 text-center text-2xl font-bold tracking-tight flex justify-center items-center gap-3 italic">
-                                        <MusicalNoteIcon class="w-6 h-6 text-indigo-600"/>
-                                        DJ Umbish
-                                        <MusicalNoteIcon class="w-6 h-6"/>
+                                    <div
+                                        class="text-indigo-600 text-center text-2xl font-bold tracking-tight flex justify-center items-center gap-3 italic">
+                                        <MusicalNoteIcon class="w-6 h-6 text-indigo-600" />
+                                        djumbish.club
+                                        <MusicalNoteIcon class="w-6 h-6" />
                                     </div>
                                     <div class="mt-3 text-center sm:mt-5">
-                                        <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900 mb-0">Why was
-                                            this created?</DialogTitle>
-                                        <div class="">
-                                            <p class="text-sm text-gray-800 ">No DJ = No Party<br>
-                                                I wanted to carry a personal DJ.
-                                                <br> Dance <b>non-stop</b>!
-                                            </p>
-                                        </div>
-                                        <DialogTitle as="h3" class="mt-4 text-base font-semibold leading-6 text-gray-900">
-                                            What
-                                            is this?</DialogTitle>
-                                        <div class="mt-2">
-                                            <p class="text-sm text-gray-800">This player will automix your songs so the
-                                                party
-                                                never stops.</p>
-                                        </div>
-                                        <DialogTitle as="h3" class="mt-4 text-base font-semibold leading-6 text-gray-900">
-                                            How it
-                                            works?</DialogTitle>
-                                        <div class="mt-2">
-                                            <ol class="text-sm text-gray-800">
-                                                <li>1. Select music from the search section</li>
-                                                <li>2. Go dance</li>
-                                            </ol>
-                                        </div>
+                                        <img src="/why.webp" alt="">
+                                        <DialogTitle as="h3" class="mt-4 text-xl tracking-tight font- leading-7 text-gray-900 [word-spacing:1px] text-start px-10">
+                                            DJ Umbish will automix the songs added to the queue.</DialogTitle>
                                     </div>
                                 </div>
                                 <div class="mt-5 sm:mt-6 sm:gap-3">
