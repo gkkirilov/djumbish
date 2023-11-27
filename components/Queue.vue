@@ -26,7 +26,7 @@ const playSong = (index) => {
             alt="Your Company"></a>
         <a href="https://twitter.com/gkkirilov" target="_blank"><span
             class="text-base font-semibold leading-12 tracking-tighter text-white">DJ <span
-              class="pl-0.5">Umbish</span></span></a>
+              class="pl-0.5">Umbish.club</span></span></a>
         <a href="https://twitter.com/gkkirilov" target="_blank">
           <svg viewBox="0 0 24 24" id="twitter" class="w-6">
             <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
