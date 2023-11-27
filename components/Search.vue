@@ -12,7 +12,7 @@ const config = useRuntimeConfig()
 const videoSearch = async (searchTerm) => {
   var params = {
     part: 'snippet',
-    key: 'AIzaSyDdOgpig7xsr8MPGzuaYius69GftKYGQDQ',
+    key: 'AIzaSyCbAmtyt2fESpzN2oraxnRsavsD0XiqYAc',
     q: searchTerm,
     type: 'video',
     maxResults: 50
