@@ -93,6 +93,23 @@ function changeThankyou() {
     thankyou.value = true
 }
 
+var email = ref()
+import axios from "axios";
+function submit(e) {
+    if (!email.value) {
+        return;
+    }
+    axios.post('/api/submit', {
+        email: email.value
+    }).then(function (response) {
+        open.value = false
+        console.log(response);
+    }).catch(function (error) {
+        open.value = false
+        console.log(error);
+    });
+}
+
 </script>
 <template>
     <div>
@@ -156,93 +173,98 @@ function changeThankyou() {
                             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                             <DialogPanel
                                 class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md sm:p-6">
-                                <div v-show="!thankyou">
-                                    <div
-                                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-600">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
-                                        </svg>
-
-                                    </div>
-                                    <div class="mt-3 text-start sm:mt-5">
-                                        <DialogTitle as="h3"
-                                            class="text-base text-center font-semibold leading-6 text-gray-900">
-                                            AI Auto Mixer
-                                        </DialogTitle>
-                                        <dl
-                                            class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                                            <div class="relative pl-9">
-                                                <dt class="inline font-semibold text-gray-900">
-                                                    <svg class="absolute left-1 top-1 h-6 w-6 text-indigo-600"
-                                                        viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                                                    </svg>
-                                                    Seamless PartyMix
-                                                </dt>
-                                                <dd class="inline"> uses AI to blend the current and next songs in your
-                                                    playlist with a selection of dynamic DJ effects.</dd>
-                                            </div>
-                                            <div class="relative pl-9">
-                                                <dt class="inline font-semibold text-gray-900">
-                                                    <svg class="absolute left-1 top-1 h-6 w-6 text-indigo-600"
-                                                        viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                                                    </svg>
-                                                    EnergyFlow
-                                                </dt>
-                                                <dd class="inline">Keep the Party Pumping with Non-Stop, High-Octane Beats
-                                                    by matching the next song tempo automatically!</dd>
-                                            </div>
-
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div v-show="!thankyou" class="mt-5 sm:mt-6">
-                                    <button type="button"
-                                        class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                        @click="changeThankyou">I want it</button>
-                                </div>
-
-                                <div v-show="thankyou">
-                                    <div
-                                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-600">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
-                                        </svg>
-
-                                    </div>
-                                    <div class="mt-3 text-start sm:mt-5">
-                                        <DialogTitle as="h3"
-                                            class="text-base text-center font-semibold leading-6 text-gray-900">
-                                            Coming soon!
-                                        </DialogTitle>
-                                        <div class="mt-2">
-                                            <p class="text-sm text-gray-700 text-center">Sign up for notification when we
-                                                launch the feature.</p>
-                                            <div class="sm:col-span-4 mt-12">
-                                                <label for="email"
-                                                    class="block text-sm font-medium leading-6 text-gray-900">Email
-                                                    address</label>
-                                                <div class="mt-2">
-                                                    <input id="email" name="email" type="email" autocomplete="email"
-                                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                                                </div>
-                                            </div>
+                                <form action="javascript:void(0);" @submit="submit">
+                                    <div v-show="!thankyou">
+                                        <div
+                                            class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-600">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                                            </svg>
 
                                         </div>
+                                        <div class="mt-3 text-start sm:mt-5">
+                                            <DialogTitle as="h3"
+                                                class="text-base text-center font-semibold leading-6 text-gray-900">
+                                                AI Auto Mixer
+                                            </DialogTitle>
+                                            <dl
+                                                class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                                                <div class="relative pl-9">
+                                                    <dt class="inline font-semibold text-gray-900">
+                                                        <svg class="absolute left-1 top-1 h-6 w-6 text-indigo-600"
+                                                            viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                                                        </svg>
+                                                        Seamless PartyMix
+                                                    </dt>
+                                                    <dd class="inline"> uses AI to blend the current and next songs in your
+                                                        playlist with a selection of dynamic DJ effects.</dd>
+                                                </div>
+                                                <div class="relative pl-9">
+                                                    <dt class="inline font-semibold text-gray-900">
+                                                        <svg class="absolute left-1 top-1 h-6 w-6 text-indigo-600"
+                                                            viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                                        </svg>
+                                                        EnergyFlow
+                                                    </dt>
+                                                    <dd class="inline">Keep the Party Pumping with Non-Stop, High-Octane
+                                                        Beats
+                                                        by matching the next song tempo automatically!</dd>
+                                                </div>
+
+                                            </dl>
+                                        </div>
                                     </div>
-                                </div>
-                                <div v-show="thankyou" class="mt-5 sm:mt-6">
-                                    <button type="button"
-                                        class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                        @click="open = false">Submit</button>
-                                </div>
+                                    <div v-show="!thankyou" class="mt-5 sm:mt-6">
+                                        <button type="button"
+                                            class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                            @click="changeThankyou">I want it</button>
+                                    </div>
+
+                                    <div v-show="thankyou">
+                                        <div
+                                            class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-600">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="mt-3 text-start sm:mt-5">
+                                            <DialogTitle as="h3"
+                                                class="text-base text-center font-semibold leading-6 text-gray-900">
+                                                Coming soon!
+                                            </DialogTitle>
+                                            <div class="mt-2">
+                                                <p class="text-sm text-gray-700 text-center">Sign up for notification when
+                                                    we
+                                                    launch the feature.</p>
+                                                <div class="sm:col-span-4 mt-12">
+                                                    <label for="email"
+                                                        class="block text-sm font-medium leading-6 text-gray-900">Email
+                                                        address</label>
+                                                    <div class="mt-2">
+                                                        <input v-model="email" id="email" name="email" type="email"
+                                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                                            autocomplete="email"
+                                                            class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div v-show="thankyou" class="mt-5 sm:mt-6">
+                                        <button type="submit"
+                                            class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
+                                    </div>
+                                </form>
                             </DialogPanel>
                         </TransitionChild>
                     </div>

@@ -83,7 +83,6 @@ function checkWelcomeMessageCookie() {
 function setCookieOnModalClose() {
     open.value = false
     Cookies.set('welcome-message', 'true', { expires: 365 }); // Set cookie for 7 days
-    console.log('Cookie set on modal close');
 }
 
 

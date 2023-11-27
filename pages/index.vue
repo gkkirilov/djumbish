@@ -3,16 +3,19 @@ useHead({
     title: "DJ Umbish"
 })
 const { data } = await useFetch('/api/hello')
-console.log('api')
-console.log(data)
+
+
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 </script>
 
 <template>
-
+    <button @click="submit">Click</button>
     <div>
         <div class="fixed-background"></div>
         {{ data }}
-        <Welcome/>
+        <Welcome />
         <div class="h-[40vh]">
             <Player />
         </div>
@@ -27,12 +30,11 @@ console.log(data)
             </div>
         </div>
         <div class="max-h-[55vh] overflow-auto">
-            <Search  />
+            <Search />
         </div>
     </div>
 </template>
 <style>
-
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -80,28 +82,32 @@ body {
 
 /* Styles the scrollbar track (background) */
 ::-webkit-scrollbar {
-    width: 12px; /* width of the entire scrollbar */
-    background-color: #2e2e2e; /* color of the track */
+    width: 12px;
+    /* width of the entire scrollbar */
+    background-color: #2e2e2e;
+    /* color of the track */
     border-radius: 6px;
 }
 
 /* Styles the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-    background-color: #858585; /* color of the scrollbar thumb */
-    border-radius: 6px; /* roundness of the scrollbar thumb */
-    border: 3px solid #2e2e2e; /* creates padding around the scrollbar thumb */
+    background-color: #858585;
+    /* color of the scrollbar thumb */
+    border-radius: 6px;
+    /* roundness of the scrollbar thumb */
+    border: 3px solid #2e2e2e;
+    /* creates padding around the scrollbar thumb */
 }
 
 /* Styles for when the scrollbar thumb is hovered */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #666; 
+    background-color: #666;
 }
 
 /* Firefox scrollbar styles */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #555 #2e2e2e; /* thumb and track color */
+    scrollbar-color: #555 #2e2e2e;
+    /* thumb and track color */
 }
-
-
 </style>
