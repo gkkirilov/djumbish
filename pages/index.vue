@@ -2,19 +2,11 @@
 useHead({
     title: "DJ Umbish"
 })
-const { data } = await useFetch('/api/hello')
-
-
-function randomIntFromInterval(min, max) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
 </script>
 
 <template>
-    <button @click="submit">Click</button>
     <div>
         <div class="fixed-background"></div>
-        {{ data }}
         <Welcome />
         <div class="h-[40vh]">
             <Player />

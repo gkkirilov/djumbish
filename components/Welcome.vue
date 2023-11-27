@@ -15,19 +15,20 @@
                             leave-from="opacity-100 translate-y-0 sm:scale-100"
                             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                             <DialogPanel
-                                class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+                                class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md sm:p-6">
                                 <div>
-                                    <div class="text-indigo-600 text-center text-xl font-bold tracking-wide">
+                                    <div class="text-indigo-600 text-center text-2xl font-bold tracking-tight flex justify-center items-center gap-3 italic">
+                                        <MusicalNoteIcon class="w-6 h-6 text-indigo-600"/>
                                         DJ Umbish
+                                        <MusicalNoteIcon class="w-6 h-6"/>
                                     </div>
                                     <div class="mt-3 text-center sm:mt-5">
-                                        <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">Why was
+                                        <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900 mb-0">Why was
                                             this created?</DialogTitle>
-                                        <div class="mt-2">
-                                            <p class="text-sm text-gray-800">I hate parties with pretend DJs. Party never
-                                                gets
-                                                going.
-                                                <br> I want to dance <b>non-stop</b>!
+                                        <div class="">
+                                            <p class="text-sm text-gray-800 ">No DJ = No Party<br>
+                                                I wanted to carry a personal DJ.
+                                                <br> Dance <b>non-stop</b>!
                                             </p>
                                         </div>
                                         <DialogTitle as="h3" class="mt-4 text-base font-semibold leading-6 text-gray-900">
@@ -68,7 +69,9 @@ import { ref } from 'vue'
 const open = ref(true)
 import { onMounted } from 'vue';
 import Cookies from 'js-cookie'; // Assuming you are using js-cookie
-
+import {
+    MusicalNoteIcon
+} from '@heroicons/vue/24/outline'
 // This ref will hold the boolean value of cookie's existence
 const isCookieSet = ref(false);
 
