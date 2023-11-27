@@ -60,7 +60,7 @@ const currentSongPlayer = (video) => {
         height: calculateHeight().toString(),
         width: 'auto',
         videoId: video.id.videoId,
-        origin: "http://localhost:8000",
+        origin: "https://djumbish.vercel.app/",
         playerVars: {
             autoplay: 1,
             controls: 1,
