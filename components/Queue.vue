@@ -35,6 +35,11 @@ const playSong = (index) => {
           </svg>
         </a>
       </div>
+      <ul class="grid grid-cols-1 gap-1 px-4 mb-16">
+        <li>- Analytics on clicks</li>
+        <li>- Add Effects between songs</li>
+        <li>- Make next song play automatically</li>
+      </ul>
 
       <div class="px-3 bg-slate-900 text-lg font-semibold leading-6 text-white">Queue</div>
       <div class="grid text-white">
