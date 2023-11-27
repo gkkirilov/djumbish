@@ -2,12 +2,16 @@
 useHead({
     title: "DJ Umbish"
 })
+const { data } = await useFetch('/api/hello')
+console.log('api')
+console.log(data)
 </script>
 
 <template>
 
     <div>
         <div class="fixed-background"></div>
+        {{ data }}
         <Welcome/>
         <div class="h-[40vh]">
             <Player />
@@ -28,6 +32,7 @@ useHead({
     </div>
 </template>
 <style>
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
