@@ -12,10 +12,10 @@ const config = useRuntimeConfig()
 const videoSearch = async (searchTerm) => {
   var params = {
     part: 'snippet',
-    key: config.public.youtubeapi2,
+    key: 'AIzaSyDdOgpig7xsr8MPGzuaYius69GftKYGQDQ',
     q: searchTerm,
     type: 'video',
-    maxResults: 10
+    maxResults: 50
   };
 
   axios.get(ROOT_URL, { params: params })
@@ -32,7 +32,7 @@ function addToQueue(video) {
 }
 
 onMounted(() => {
-  videoSearch('shaun paul');
+  videoSearch('Daddy Yankee, Shaggy');
 });
 
 </script>
@@ -45,7 +45,7 @@ onMounted(() => {
         <div v-for="video in videos" :key="video.etag" class="relative">
           <img class="rounded-lg w-full" :src="video.snippet.thumbnails.medium.url" alt="">
           <div
-            class="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-80 opacity-0 hover:opacity-100 flex flex-col justify-center items-center p-5" @click="addToQueue(video)">
+            class="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-80 opacity-0 hover:opacity-100 flex flex-col justify-center items-center xl:p-5 lg:p-3 p-1" @click="addToQueue(video)">
             <div class="flex gap-1 mb-2.5 text-xs">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" class="w-4 h-4">
@@ -53,7 +53,7 @@ onMounted(() => {
               </svg>
               Add to queue
             </div>
-            <span class="text-sm font-semibold text-white">{{ video.snippet.title }}</span>
+            <span class="text-xs sm:text-base md:font-semibold text-white line-clamp-4">{{ video.snippet.title }}</span>
           </div>
         </div>
       </div>

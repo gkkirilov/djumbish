@@ -8,16 +8,16 @@ useHead({
 
     <div>
         <div class="fixed-background"></div>
-
+        <Welcome/>
         <div class="h-[40vh]">
             <Player />
         </div>
-        <div class="h-[5vh]">
+        <div class="lg:h-[5vh]">
             <div class="relative">
                 <div class="absolute inset-0 flex items-center" aria-hidden="true">
                     <div class="w-full border-t border-gray-500"></div>
                 </div>
-                <div class="relative flex justify-center">
+                <div class="relative flex justify-center hidden lg:block">
                     <span class="bg-slate-900 px-3 text-base font-semibold leading-6 text-white">Search</span>
                 </div>
             </div>

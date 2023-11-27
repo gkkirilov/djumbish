@@ -13,17 +13,18 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "nuxt": "^3.8.2",
+    "nuxt-gtag": "^1.1.1",
+    "nuxt-headlessui": "^1.1.4",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
+    "@heroicons/vue": "^2.0.18",
     "@pinia/nuxt": "^0.5.1",
     "axios": "^1.6.2",
+    "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
-    "pinia": "^2.1.7",
-    "youtube-api-search": "^0.0.5",
-    "youtubei": "^1.2.1",
-    "ytsr": "^3.8.4"
+    "pinia": "^2.1.7"
   }
 }

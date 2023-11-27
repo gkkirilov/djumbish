@@ -6,7 +6,7 @@ export const useStore = defineStore({
     currentlyPlaying: {name: 'Nirvana - Smells like teen spirit'},
     queue: [],
     youtubeList: [],
-    playIndex: null
+    playNext: false
    }),
   actions: {}
 })
