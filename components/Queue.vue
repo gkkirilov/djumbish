@@ -2,7 +2,6 @@
 import { storeToRefs } from 'pinia'
 const store = useStore()
 const { queue } = storeToRefs(store)
-import videosExample from '../utils/videos'
 
 const removeSong = (index) => {
   queue.value.splice(index, 1);
@@ -17,7 +16,7 @@ const playSong = (index) => {
 
 </script>
 <template>
-  <div class="flex grow flex-col justify-between overflow-y-auto bg-gray-900 pb-4 z-0">
+  <div class="flex grow flex-col justify-between overflow-y-auto bg-gray-900 pb-4 z-0 border-r-[1px] border-gray-400">
     <div>
 
       <div class="flex h-16 items-center px-3 mb-10 opacity-50 hover:opacity-100 justify-between
@@ -35,13 +34,16 @@ const playSong = (index) => {
           </svg>
         </a>
       </div>
-      <ul class="grid grid-cols-1 gap-1 px-4 mb-16">
+      <ul class="grid grid-cols-1 gap-1 px-4">
         <li>- Analytics on clicks</li>
-        <li>- Add Effects between songs</li>
-        <li>- Make next song play automatically</li>
       </ul>
 
-      <div class="px-3 bg-slate-900 text-lg font-semibold leading-6 text-white">Queue</div>
+      <div class="px-3 bg-slate-900 text-lg font-semibold leading-6 text-white flex justify-between">
+        Queue
+        <div class="mb-5 justify-center flex opacity-80">
+          <FireButton />
+        </div>
+      </div>
       <div class="grid text-white">
         <div v-if="queue != []" v-for="(song, index) in queue"
           class="relative flex items-center justify-between px-2 py-3 hover:border-gray-500 group">
@@ -50,7 +52,8 @@ const playSong = (index) => {
             <div class="text-sm font-medium text-gray-300 line-clamp-3">{{ song.snippet.title }}</div>
             <!-- <p class="truncate text-sm text-gray-400">3:30</p> -->
           </div>
-          <div class="flex-initial flex-col flex space opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div
+            class="flex-initial flex-col flex space md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button type="button" @click="playSong(index)"
               class="rounded bg-white/10 pl-0.5 pt-0.5 pb-0.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 hover:text-white mb-1.5">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6" viewBox="0 0 19 19" fill="currentColor">
@@ -67,10 +70,6 @@ const playSong = (index) => {
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="mt-5 px-3 justify-center flex">
-      <FireButton />
     </div>
   </div>
 </template>

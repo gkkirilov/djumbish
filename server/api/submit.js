@@ -7,7 +7,6 @@ async function prismaCreate(name) {}
 export default defineEventHandler(async (event) => {
   // https://nuxt.com/docs/guide/directory-structure/server#handling-requests-with-body
   const { email } = await readBody(event);
-  console.log(email);
   try {
     await prisma.user.create({
       data: {
@@ -19,7 +18,7 @@ export default defineEventHandler(async (event) => {
 
     return {};
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return { error: true, errorMessage: JSON.stringify(error) };
   }
 });

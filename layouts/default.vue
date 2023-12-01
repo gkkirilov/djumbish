@@ -48,9 +48,9 @@ const sidebarOpen = ref(false)
 
 <template>
   <div>
-    <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden fixed top-3/4 bg-white rounded-r-full z-50" @click="sidebarOpen = true">
+    <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden fixed top-3/4 bg-indigo-600 rounded-r-full z-50" @click="sidebarOpen = true">
           <span class="sr-only">Open sidebar</span>
-          <ChevronRightIcon class="h-6 w-6" aria-hidden="true" />
+          <ChevronRightIcon class="h-6 w-6 text-white ml-2" aria-hidden="true" />
     </button>
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <TransitionRoot as="template" :show="sidebarOpen">
@@ -64,7 +64,7 @@ const sidebarOpen = ref(false)
             <DialogPanel class="relative mr-16 flex w-full max-w-xs flex-1">
               <TransitionChild as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
                 <div class="absolute left-full top-3/4 flex w-16 justify-center pt-5">
-                  <button type="button" class="-m-2.5 p-2.5" @click="sidebarOpen = false">
+                  <button type="button" class="-m-2.5 p-2.5  bg-indigo-600 rounded-lg" @click="sidebarOpen = false">
                     <span class="sr-only">Close sidebar</span>
                     <XMarkIcon class="h-6 w-6 text-white" aria-hidden="true" />
                   </button>
