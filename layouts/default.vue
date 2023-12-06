@@ -44,6 +44,9 @@ const userNavigation = [
 ]
 
 const sidebarOpen = ref(false)
+setTimeout(() => {
+  sidebarOpen.value = true
+}, 1000);
 </script>
 
 <template>

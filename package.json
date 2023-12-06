@@ -12,6 +12,8 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.10.1",
+    "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
+    "mixpanel-nuxt": "^0.0.7",
     "nuxt": "^3.8.2",
     "nuxt-gtag": "^1.1.1",
     "nuxt-headlessui": "^1.1.4",

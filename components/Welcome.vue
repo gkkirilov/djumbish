@@ -26,7 +26,7 @@
                                     <div class="mt-3 text-center sm:mt-5">
                                         <img src="/why.webp" alt="">
                                         <DialogTitle as="h3" class="mt-4 text-xl tracking-tight font- leading-7 text-gray-900 [word-spacing:1px] text-start px-10">
-                                            DJ Umbish will automix the songs added to the queue.</DialogTitle>
+                                            <b>DJ Umbish</b> will automix the songs added to the queue.</DialogTitle>
                                     </div>
                                 </div>
                                 <div class="mt-5 sm:mt-6 sm:gap-3">

@@ -8,7 +8,7 @@ useHead({
     <div>
         <div class="fixed-background"></div>
         <Welcome />
-        <div class="h-[40vh]">
+        <div class="h-[40vh] grid place-items-center">
             <Player />
         </div>
         <div class="lg:h-[5vh]">

@@ -34,9 +34,6 @@ const playSong = (index) => {
           </svg>
         </a>
       </div>
-      <ul class="grid grid-cols-1 gap-1 px-4">
-        <li>- Analytics on clicks</li>
-      </ul>
 
       <div class="px-3 bg-slate-900 text-lg font-semibold leading-6 text-white flex justify-between">
         Queue

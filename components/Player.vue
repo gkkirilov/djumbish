@@ -10,7 +10,6 @@ var currentPlayerId = ref(1)
 var nextPlayerId = ref(2)
 var ytPlayer
 var timeoutIds = []
-const { gtag } = useGtag()
 
 store.$subscribe(async (state, mutation) => {
     if (!ytPlayer) {
@@ -74,7 +73,7 @@ function playTransitionAudioEffect() {
             audioPlayerTwo.value.play()
             break;
         case 3:
-            audioPlayerThree.value.play()
+            audioPlayerFour.value.play()
             break;
         case 4:
             audioPlayerFour.value.play()
@@ -127,12 +126,17 @@ const audioPlayerFive = ref(null);
 <template>
     <div>
         <ClientOnly>
-
             <section class="flex">
                 <template v-for="playerId in playerIds">
                     <div :id="'player-' + playerId" class="rounded-lg aspect-video">
                     </div>
                 </template>
+                <div v-show="!ytPlayer">
+                    <div class="text-4xl font-bold tracking-tight text-gray-400 sm:text-2xl text-center">Add songs</div>
+                    <br>
+                    <br>
+                    <div class="text-4xl font-bold tracking-tight text-gray-400 sm:text-2xl text-center lg:hidden">Open sidebar for automix</div>
+                </div>
             </section>
         </ClientOnly>
         <BuyAi />

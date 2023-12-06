@@ -16,11 +16,20 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
-    "nuxt-gtag",
+    'mixpanel-nuxt',
+    // '@zadigetvoltaire/nuxt-gtm',
+    // "nuxt-gtag",
     'nuxt-headlessui',
   ],
-  gtag: {
-    id: "G-705K72Y5Y0",
+  // gtag: {
+  //   id: "G-705K72Y5Y0",
+  // },
+  mixpanel: {
+    token: 'a34cbc23a6bd2fba4ee0c331643f6717',
+    disabled: false,
+    config: {
+      track_pageview: true
+    }
   },
   headlessui: {
     prefix: ''

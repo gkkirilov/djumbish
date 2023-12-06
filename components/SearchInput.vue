@@ -30,9 +30,14 @@
 import { ref, watch } from 'vue';
 import _ from 'lodash';
 const emit = defineEmits(['termChange']);
+const mixpanel = useMixpanel()
+
 const searchTerm = ref('');
 const debouncedSearch = _.debounce(() => {
   // Emit the encoded search term
+  mixpanel.track('Search', {
+    searchTerm: searchTerm.value
+  })
   emit('termChange', encodeURIComponent(searchTerm.value));
 }, 400);
 
@@ -41,4 +46,4 @@ watch(searchTerm, () => {
 });
 </script>
   
-<style></style>
+<style></style>🐑
