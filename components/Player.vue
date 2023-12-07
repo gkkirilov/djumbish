@@ -141,19 +141,19 @@ const audioPlayerFive = ref(null);
         </ClientOnly>
         <BuyAi />
         <audio ref="audioPlayerOne" controls class="hidden">
-            <source src="/whoosh.MP3" type="audio/mpeg">
+            <source src="/whoosh.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerTwo" controls class="hidden">
-            <source src="/rewind.MP3" type="audio/mpeg">
+            <source src="/rewind.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerThree" controls class="hidden">
-            <source src="/listen.MP3" type="audio/mpeg">
+            <source src="/listen.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerFour" controls class="hidden">
-            <source src="/shot.MP3" type="audio/mpeg">
+            <source src="/shot.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerFive" controls class="hidden">
-            <source src="/slowdown.MP3" type="audio/mpeg">
+            <source src="/slowdown.mp3" type="audio/mpeg">
         </audio>
     </div>
 </template>
