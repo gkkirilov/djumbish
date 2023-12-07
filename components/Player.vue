@@ -142,13 +142,13 @@ const audioPlayerFive = ref(null);
             <source src="/whoosh.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerTwo" controls class="hidden">
-            <source src="/rewind.mp3" type="audio/mpeg">
+            <source src="/rewind1.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerFour" controls class="hidden">
-            <source src="/shot.mp3" type="audio/mpeg">
+            <source src="/shot1.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerFive" controls class="hidden">
-            <source src="/slowdown.mp3" type="audio/mpeg">
+            <source src="/slowdown1.mp3" type="audio/mpeg">
         </audio>
     </div>
 </template>
