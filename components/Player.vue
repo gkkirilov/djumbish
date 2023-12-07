@@ -31,7 +31,6 @@ function onPlayerStateChange({ data: currentStatus, target: player }) {
     const currentTime = parseInt(player.getCurrentTime().toFixed());
     audioPlayerOne.value.volume = player.getVolume() / 100
     audioPlayerTwo.value.volume = player.getVolume() / 100
-    audioPlayerThree.value.volume = player.getVolume() / 100
     audioPlayerFour.value.volume = player.getVolume() / 100
     audioPlayerFive.value.volume = player.getVolume() / 100
 
@@ -119,7 +118,6 @@ const currentSongPlayer = (video) => {
 
 const audioPlayerOne = ref(null);
 const audioPlayerTwo = ref(null);
-const audioPlayerThree = ref(null);
 const audioPlayerFour = ref(null);
 const audioPlayerFive = ref(null);
 </script>
@@ -145,9 +143,6 @@ const audioPlayerFive = ref(null);
         </audio>
         <audio ref="audioPlayerTwo" controls class="hidden">
             <source src="/rewind.mp3" type="audio/mpeg">
-        </audio>
-        <audio ref="audioPlayerThree" controls class="hidden">
-            <source src="/listen.mp3" type="audio/mpeg">
         </audio>
         <audio ref="audioPlayerFour" controls class="hidden">
             <source src="/shot.mp3" type="audio/mpeg">
